@@ -2,7 +2,8 @@
 script_text.txt
 cartman_data.txt
 
-
+# Also add my idea
+.idea/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
