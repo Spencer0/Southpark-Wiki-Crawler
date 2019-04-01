@@ -42,6 +42,6 @@ for season in season_episodes:
             for character in center_tag.find_all('center'):
                 script += center_tag.text
 
-scriptfile = open('scipt_text.txt','w', encoding='utf-8')
+scriptfile = open('script_text.txt','w', encoding='utf-8')
 scriptfile.write(script)
 scriptfile.close()
