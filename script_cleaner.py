@@ -19,10 +19,22 @@ script_lines = new_text.split("\n")
 # Remove any lines from our text we didn't process
 filtered_script = ''
 for line in script_lines:
+    if '::' in line:
+        line = line.replace('::',':')
     if ':' in line:
         filtered_script += line[1:]+"\n"
+
+
+
 
 # Save clean data
 clean_data = open('clean_data.txt','w',encoding='utf-8')
 clean_data.write(filtered_script)
+clean_data.close()
+
+# Convert from UTF8 to ascii (data loss expected)
+# Save clean data in ascii
+ascii_data = filtered_script.encode("ascii","ignore")
+clean_data = open('clean_data_ASCII.txt','w')
+clean_data.write(ascii_data.decode("ascii"))
 clean_data.close()
